@@ -1,7 +1,7 @@
 Feature: HOYTS Cinemas website
   Execute login 
 
-Scenario 1: User not registered or entering wrong email or password
+Scenario: User not registered or entering wrong email or password
   Given the user of HOYTS Cinema with email "jorge.matheus@gmail.com"
     And password "Password123"
   When the user accesses the login page 
@@ -11,7 +11,17 @@ Scenario 1: User not registered or entering wrong email or password
     And keep the user on the login page.
 
 
-Scenario 2: Registering a new user without agreeing to the terms
+Scenario: Successfull Login
+  Given the user of HOYTS Cinema with email "jorge.matheus@gmail.com"
+    And password "Password123"
+  When the user accesses the login page 
+    And fills the Email address field with "jorge.matheus@gmail.com"
+    And fills the Password field with "Password123"
+  Then the user should be redirect to the home page
+    And keep the user on the home page.
+
+
+Scenario: Registering a new user without agreeing to the terms
   Given the user is on the HOYTS Cinema registration page
   When the user fills the Email address field with "jorge.matheus@gmail.com"
     And fills the Password field with "Password123"
@@ -29,7 +39,7 @@ Scenario 2: Registering a new user without agreeing to the terms
     And keep the user on the registration page with all fields filled.
 
 
-Scenario 3: Registering a new user agreeing to the terms
+Scenario: Registering a new user agreeing to the terms
   Given the user is on the HOYTS Cinema registration page
   When the user fills the Email address field with "jorge.matheus@gmail.com"
     And fills the Password field with "Password123"
@@ -46,14 +56,67 @@ Scenario 3: Registering a new user agreeing to the terms
   When the user selects the "HOYTS Rewards Free" option
     And clicks on the CONTINUE button
   Then the site should redirect to the HOYTS Rewards page
-    And display the message "Hi Jorge"
+    And display the message "Hi Jorge".
 
 
 
-Scenario 4: User logs out from the home page
+Scenario: User logs out from the home page
   Given the user is on the home page
   When the user clicks on the profile picture on the upper right side
     And clicks on the sign out button
   Then the user should be logged out
-    And keep the user on the home page
+    And keep the user on the home page.
+
+
+Scenario: Password Recovery with Valid Email
+  Given the user is on the HOYTS Cinema login page
+  When the user clicks on the "Reset password" link
+    And fills the Email address field with "jorge.matheus@gmail.com"
+    And clicks on the Send reset email button
+  Then the site should display "We've sent an email to jorge.matheus@gmail.com with a link to reset your HOYTS Rewards password."
+    And keep the user on the Help is on the way! page.
+
+
+Scenario: Password Recovery with not registered Email
+  Given the user is on the HOYTS Cinema login page
+  When the user clicks on the "Reset password" link
+    And fills the Email address field with "notregistered@gmail.com"
+    And clicks on the Send reset email button
+  Then the site should display "Sorry, that email or card number couldn't be found. Please try again or contact us"
+    And keep the user on the Reset your password page.
+
+
+Scenario: Update Profile Information
+  Given the user is logged in on the HOYTS Cinema website
+  When the user accesses the profile page
+    And updates the First Name field with "Matheus"
+    And updates the Last Name field with "Jorge"
+    And updates the Phone Number field with "+55 81 9123456789"
+    And clicks on the SAVE MY DETAILS button
+  Then the site should display "Thanks, your details have been saved."
+    And show the updated information on the profile page
+
+Scenario: Add a movie to the watchlist
+  Given the user is logged in on the HOYTS Cinema website 
+  When the user accesses the Movie page
+    And selects a movie with title "Bad Boys: Ride or Die"
+    And clicks on watchlist button
+  Then watchlist button shoud turn red 
+    And the movie "Bad Boys: Ride or Die" shoudl be added in the user's watchlist
+
+Scenario: View the watchlist
+  Given the user is logged in on the HOYTS Cinema website
+  When the user accesses their watchlist
+  Then the site should display a list of movies in the user's watchlist
+
+Scenario: Remove a movie from the watchlist
+  Given the user is logged in on the HOYTS Cinema website
+    And the user has "Bad Boys: Ride or Die" in their watchlist
+  When the user accesses their watchlist
+    And clicks on the watchlist button for the movie "Bad Boys: Ride or Die"
+  Then the watchlist button turn black
+    And the movie "Bad Boys: Ride or Die" should be removed from user's watchlist
+    And keep the user on the watchlist page
+
+
 
