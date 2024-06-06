@@ -96,6 +96,7 @@ Scenario: Update Profile Information
   Then the site should display "Thanks, your details have been saved."
     And show the updated information on the profile page
 
+
 Scenario: Add a movie to the watchlist
   Given the user is logged in on the HOYTS Cinema website 
   When the user accesses the Movie page
@@ -104,10 +105,12 @@ Scenario: Add a movie to the watchlist
   Then watchlist button shoud turn red 
     And the movie "Bad Boys: Ride or Die" shoudl be added in the user's watchlist
 
+
 Scenario: View the watchlist
   Given the user is logged in on the HOYTS Cinema website
   When the user accesses their watchlist
   Then the site should display a list of movies in the user's watchlist
+
 
 Scenario: Remove a movie from the watchlist
   Given the user is logged in on the HOYTS Cinema website
@@ -119,4 +122,19 @@ Scenario: Remove a movie from the watchlist
     And keep the user on the watchlist page
 
 
+Scenario: Redirect to the app page on the App Store
+  Given the user is using an iOS mobile device on the home page of the HOYTS Cinema website
+  When the user scrolls to the bottom of the page
+    And clicks on the "Download on the App Store" button
+  Then the user should be redirected to the HOYTS Cinema app on the Apple Store
+    And the user should be able to download the app
+
+
+Scenario: Check movie availability at Northland cinema
+  Given the user is on the home page
+  When the user selects the hamburger menu
+    And clicks on "Session Times"
+    And adds the cinema "Northland"
+    And chooses the day "MON 10 JUN"
+  Then the user should be able to see the movies now showing at Northland cinema for that day
 
