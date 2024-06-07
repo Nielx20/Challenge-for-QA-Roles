@@ -122,6 +122,13 @@ Scenario: Remove a movie from the watchlist
     And keep the user on the watchlist page
 
 
+Scenario: Verify watchlist synchronization between Chrome and Firefox
+  Given the user is logged into the HOYTS Cinema website on both Chrome and Firefox browsers
+    And the user adds "The Garfield Movie" to the watchlist using Firefox
+  When the user checks the watchlist on Chrome
+  Then "The Garfield Movie" should be present in the watchlist on Chrome
+
+
 Scenario: Redirect to the app page on the App Store
   Given the user is using an iOS mobile device on the home page of the HOYTS Cinema website
   When the user scrolls to the bottom of the page

@@ -1,4 +1,4 @@
-Test failed: 12. Redirect to the app page on the App Store
+Test failed: 13. Redirect to the app page on the App Store
 
 SUMMARY: Is not possible to download app from App Store in Brazil
 COMPONENT: Triage

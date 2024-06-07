@@ -1,9 +1,9 @@
 [- - - TEST PLAN SUMMARY - - -]
 
-Total Test Cases Planned: 13 
-Total Test Cases Executed: 13 
+Total Test Cases Planned: 14
+Total Test Cases Executed: 14
 Total Test Cases Passes: 12
-Total Test Cases Failed: 1
+Total Test Cases Failed: 2
 
 
 
@@ -53,11 +53,15 @@ Total Test Cases Failed: 1
  - - Pass
  - - User is able to remove the movie from watchlist correctly
 
-12. Redirect to the app page on the App Store
+12. Verify watchlist synchronization between Chrome and Firefox
+ - - Failed
+ - - System is not able to sync information for the same user when used a different browsers
+
+13. Redirect to the app page on the App Store
  - - Failed
  - - User is not able to access the app on App Store
 
-13. Check movei available at Northland cinema 
+14. Check movei available at Northland cinema 
  - - Pass
  - - Failed 
 
