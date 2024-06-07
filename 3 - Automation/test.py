@@ -1,3 +1,4 @@
+
 from playwright.sync_api import sync_playwright
 import time
 
@@ -24,20 +25,22 @@ with sync_playwright() as p:
 
     # Step2: Navigate to the Movie page
     page.click('text=Movies')
-    time.sleep(2)
+    time.sleep(3)
     page.click('text=The Garfield Movie')
-    time.sleep(2)
+    time.sleep(3)
 
     # Step 3 - Add to the watchlist
     # CSS watchlist button on movie page
     page.click('.actions__item-button--watchlist')
-    time.sleep(5)
+    time.sleep(6)
 
     # Step 4 - Verify if the movie has been added to the watchlist
     page.query_selector('.header__profile-menu-avatar').hover()
     time.sleep(2)
     page.click('text=My Watchlist')
+
     # Verify if the movie is present
     page.wait_for_selector('text=The Garfield Movie')
 
+    time.sleep(15)
     browser.close()
