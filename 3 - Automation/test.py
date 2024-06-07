@@ -41,6 +41,4 @@ with sync_playwright() as p:
 
     # Verify if the movie is present
     page.wait_for_selector('text=The Garfield Movie')
-
-    time.sleep(15)
-    browser.close()
+    time.sleep(10)

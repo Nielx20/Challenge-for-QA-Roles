@@ -9,6 +9,6 @@
 
 ### Setup Instructions
 1. Clone the repository or download the project files.
-2. Open a terminal and navigate to the `3-automation` folder.
-3. Run python file 'test.py'
+2. Open a terminal and navigate to the "3-automation" folder.
+3. Run python file "test.py"
 

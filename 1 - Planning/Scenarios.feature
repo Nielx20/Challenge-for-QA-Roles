@@ -1,5 +1,5 @@
 Feature: HOYTS Cinemas website
-  Execute login 
+  Registration Login Log out and recovery
 
 Scenario: User not registered or entering wrong email or password
   Given the user of HOYTS Cinema with email "jorge.matheus@gmail.com"
@@ -59,7 +59,6 @@ Scenario: Registering a new user agreeing to the terms
     And display the message "Hi Jorge".
 
 
-
 Scenario: User logs out from the home page
   Given the user is on the home page
   When the user clicks on the profile picture on the upper right side
@@ -86,6 +85,9 @@ Scenario: Password Recovery with not registered Email
     And keep the user on the Reset your password page.
 
 
+Feature: HOYTS Cinemas website
+  Execute update profile information
+
 Scenario: Update Profile Information
   Given the user is logged in on the HOYTS Cinema website
   When the user accesses the profile page
@@ -96,6 +98,9 @@ Scenario: Update Profile Information
   Then the site should display "Thanks, your details have been saved."
     And show the updated information on the profile page
 
+
+Feature: HOYTS Cinemas website
+  Watchlist management
 
 Scenario: Add a movie to the watchlist
   Given the user is logged in on the HOYTS Cinema website 
@@ -129,6 +134,9 @@ Scenario: Verify watchlist synchronization between Chrome and Firefox
   Then "The Garfield Movie" should be present in the watchlist on Chrome
 
 
+Feature: HOYTS Cinemas website
+  Execute app download at App Store
+
 Scenario: Redirect to the app page on the App Store
   Given the user is using an iOS mobile device on the home page of the HOYTS Cinema website
   When the user scrolls to the bottom of the page
@@ -136,6 +144,9 @@ Scenario: Redirect to the app page on the App Store
   Then the user should be redirected to the HOYTS Cinema app on the Apple Store
     And the user should be able to download the app
 
+
+Feature: HOYTS Cinema website
+  Verify movie is available at a specif cinema 
 
 Scenario: Check movie availability at Northland cinema
   Given the user is on the home page
