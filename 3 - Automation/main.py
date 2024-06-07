@@ -34,7 +34,20 @@ with sync_playwright() as p:
     page.click('text=The Garfield Movie')
     print('procurando o filme do garfild')
     time.sleep(3)
+
+    # Step 3 - Add to the watch list
     page.locator(
         'xpath=//*[@id="main-content"]/div[1]/div[1]/div/div/ul/li[2]/button/span[1]/span/span').click()
     print('apertei para add to watch list')
+    time.sleep(6)
+
+    # Step4 verify if the movie has been added
+    page.locator('xpath=//*[@id="header-profile"]/div/a/span[1]').click()
+    print('Cliquei no perfil')
+    time.sleep(3)
+    page.click('text=My Watchlist')
+    print('Cheguei na watchlist')
+    page.wait_for_selector('text=The Garfield Movie')
+    print('Deu certo')
+
     time.sleep(15)
