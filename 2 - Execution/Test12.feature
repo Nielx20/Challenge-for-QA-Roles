@@ -35,9 +35,10 @@ WEB BROWSER: Chrome and Firefox
     - windows_log.zip
 
 *Videos collected:*
-    - [Video_link|https://drive.google.com/file/d/1tmky2reof8nz-C3VjyOiK0ho1Q14XOB1/view?usp=sharing]
+    - [Video_link|https://drive.google.com/file/d/1sy0gEr-uOEfK2SHkjnxmjRhfig5iGj81/view?usp=sharing]
 
 *Comments:*
+    - After 30 min the system could not sync the information and this issue is still seen
     - Chrome version: XX.XXXX.XX
     - Firefox version:
     - Windows 11 Home

@@ -72,7 +72,9 @@ Total Test Cases Failed: 2
 
 The tests were created to focus on the main user flows, like login, registration, password, recovery, managing watchlist.
 The mentioned scenarios were created with daily usage in mind, so most of them it's considered critical.
-If some of them fail the Bug should be reported as high priotity. A real defect was identified and it has critical priotity, 
-because it affects a whole region of the world, preventing the access of the app verison of the website. 
+If some of them fail the Bug should be reported as high priotity. The reals defects identified have critical priotity, 
+because it affects a whole region of the world, preventing the access of the app verison of the website.
+The other one directly impacts users who use multiple browsers, leading to an inconsistent experience and a 
+potential loss of trust in the website.
 The manual testing phase has been completed and the scenarios planned should be executed daily to ensure a smooth
 and funcional user experience, only them will it be possible to keep the quality of the HOYTS Cinema website.
